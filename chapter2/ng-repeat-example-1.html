@@ -1,8 +1,15 @@
 <html ng-app="notesApp">
 <head>
 	<title></title>
+	<style type="text/css">
+		[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+		.ng-cloak, .x-ng-cloak {
+			display: none !important;
+		}
+	</style>
+
 </head>
-<body ng-controller="MainCtrl as ctrl">
+<body ng-controller="MainCtrl as ctrl" class="ng-cloak">
 	<div ng-repeat="note in ctrl.notes">
 		<span class="label">{{note.label}}</span>
 		<span class="status" ng-bind="note.done"></span>
