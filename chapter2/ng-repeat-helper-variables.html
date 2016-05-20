@@ -1,0 +1,40 @@
+<html ng-app="notesApp">
+<head>
+	<title></title>
+	<style type="text/css">
+		.even{background-color: #8CCC8C}
+		.odd{background-color: #FFBEBE}
+	</style>
+</head>
+<body ng-controller="MainCtrl as ctrl">
+	
+	<div ng-repeat="note in ctrl.notes" ng-class="{'even':$even, 'odd':$odd}">
+		<div>First element: {{$first}}</div>
+		<div>Middle element: {{$middle}}</div>
+		<div>Last element: {{$last}}</div>
+		<div>Index of element: {{$index}}</div>
+		<div>At even position: {{$even}}</div>
+		<div>At odd position: {{$odd}}</div>
+
+		<span class="label"> {{note.label}}</span>
+		<span class="status" ng-bind="note.done"></span>
+		<br/><br/>
+
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+<script>
+	angular.module("notesApp", []);
+	angular.module("notesApp").controller("MainCtrl", [function(){
+		var self = this;	
+		self.notes = [
+			{id: 1, label: 'First Note', done: false},
+			{id: 2, label: 'Second Note', done: false},
+			{id: 3, label: 'Done Note', done: true},
+			{id: 4, label: 'Last Note', done: false}
+		]
+	
+	}]);
+</script>
+</body>
+</html>
