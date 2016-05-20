@@ -4,18 +4,25 @@
 
 	<form name="myForm" ng-submit="ctrl.submit()">
 		<input type="text" 
+			   name="uname"
 			   ng-model="ctrl.user.username"
 			   required
 			   ng-minlength="4">
-		<input type="text" 
+		<span ng-show="myForm.uname.$error.required">This is a required field</span>
+		<span ng-show="myForm.uname.$error.minlength">Minimum length required is</span>
+		<span ng-show="myForm.uname.$invalid">This filed is invalid</span>
+		
+		<input type="password"
+			   name="pwd"	
 			   ng-model="ctrl.user.password"
 			   required>
+		<span ng-show="myForm.pwd.$error.required">This filed is invalid</span>
+
 		<input type="submit" 
 			   value="submit"
 			   ng-disabled="myForm.$invalid">
 	</form>
-
-	{{myForm.$pristine}}
+	
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
 <script>
