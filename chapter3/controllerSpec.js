@@ -17,7 +17,7 @@ describe("Controller: ListCtrl", function(){
 		]);
 	});
 
-	it("should have highlight items based on state", function(){
+	it("should have highl,ight items based on state", function(){
 		var item = {id: 1, label: "First", done: true};
 
 		var actualClass = ctrl.getDoneClass(item);
