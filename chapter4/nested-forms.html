@@ -20,7 +20,7 @@
 			   required
 			   placeholder="Password">
 
-
+		<p>Profile</p>	   
 		<ng-form name="profile">
 			<input type="text"
 				   name="firstName"
@@ -41,6 +41,13 @@
 
 		<span ng-show="myForm.profile.$invalid">Please fill out the profile information</span>
 
+		<p>
+		<pre>
+		{{ctrl.user}}
+		</pre>
+		</p>
+
+		<br>
 		<input type="submit" 
 			   value="submit"
 			   ng-disabled="myForm.$invalid">
