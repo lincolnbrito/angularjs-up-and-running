@@ -14,7 +14,7 @@ angular.module("notesApp").controller("MainCtrl",["$http", function($http){
                 console.log("Error while fetching notes");
             }
         );
-    }
+    };
 
     fetchTodos();
 
