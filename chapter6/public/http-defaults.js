@@ -34,6 +34,15 @@ angular.module("notesApp").config(["$httpProvider", function($httpProvider){
             return requestStr;
         }
     );
+    $httpProvider.defaults.transformResponse.push(
+        function(resp){
+            if(resp){
+                resp.msg = "RESPOSTINHA: "+resp.msg;
+            }
+            return resp;
+        }
+    );
+
 
     // Set the content type to be FORM type for all post requests
     // This does not add it to GET requests
