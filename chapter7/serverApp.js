@@ -9,5 +9,4 @@ angular.module("serverApp").controller("MainCtrl", ["$http", function($http){
     },function(errResponse){
         self.errorMessage = errResponse.data.msg;
     });
-
 }]);
